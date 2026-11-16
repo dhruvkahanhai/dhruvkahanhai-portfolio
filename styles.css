@@ -1,0 +1,1067 @@
+/* ==========================================================================
+   DHRUV VASAVA — HUMAN PHOTOGRAPHER
+   Minimalist Black & White Film Photography Portfolio
+   Exact Specifications + Franklin Yeep About/Contact Page
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --font-family: 'Montserrat', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg-color: #000000;
+  --brand-color: #E5E5E5;
+  --white-color: #FFFFFF;
+  --active-dim: #8E8E8E;
+  --sidebar-w: 250px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg-color);
+  color: var(--white-color);
+  font-family: var(--font-family);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--white-color);
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* ==========================================================================
+   1. Left Navigation Sidebar
+   ========================================================================== */
+.nav-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--sidebar-w);
+  height: 100vh;
+  background-color: var(--bg-color);
+  z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 52px 20px 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: none !important;
+  scrollbar-width: none;
+}
+
+.nav-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Brand Title (2 lines, ALL CAPS: 13.5px, 600, line-height 1.25, letter-spacing 0.04em, #E5E5E5) */
+.logo-block {
+  margin-bottom: 38px;
+}
+
+.brand-text {
+  font-family: var(--font-family);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  color: var(--brand-color);
+  text-transform: uppercase;
+  display: block;
+}
+
+/* Category Sub-label (2 lines, ALL CAPS: 11.5px, 400, line-height 1.35, letter-spacing 0.04em, #FFFFFF) */
+.subtitle-block {
+  font-family: var(--font-family);
+  font-size: 11.5px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  color: var(--white-color);
+  text-transform: uppercase;
+  margin-bottom: 44px;
+}
+
+.subtitle-block span {
+  display: block;
+}
+
+/* Navigation Page Links (single line per page, Title Case):
+   14px, 700 (400 when active/hover), line-height 1.4, letter-spacing 0.01em
+   Vertical spacing between links: 21px */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  margin-bottom: 46px;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-link {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: var(--white-color);
+  display: inline-block;
+  transition: color 0.15s ease, font-weight 0.15s ease;
+}
+
+.nav-item.selected .nav-link,
+.nav-link:hover {
+  color: var(--active-dim) !important;
+  font-weight: 400 !important;
+}
+
+.nav-del-btn {
+  display: none;
+  color: #ef4444;
+  font-size: 14px;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+body.edit-mode .nav-del-btn {
+  display: inline-block;
+}
+
+.add-page-nav-btn {
+  display: none;
+  font-family: var(--font-family);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 8px;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  color: #888888;
+  margin-top: 10px;
+  width: fit-content;
+}
+
+body.edit-mode .add-page-nav-btn {
+  display: inline-block;
+}
+
+/* Footer: 16x16px outline Instagram icon + 2-line copyright */
+.nav-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-bottom: 16px;
+  color: var(--white-color);
+  transition: opacity 0.2s;
+}
+
+.social-instagram:hover {
+  opacity: 0.6;
+}
+
+.social-instagram svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--white-color);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.copyright-block {
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+  color: var(--white-color);
+  text-transform: uppercase;
+}
+
+.copyright-block span {
+  display: block;
+}
+
+/* Mobile Header */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 54px;
+  background: #000000;
+  z-index: 500;
+  padding: 0 24px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-brand {
+  font-family: var(--font-family);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--brand-color);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.mobile-toggle-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+
+.mobile-toggle-btn span {
+  width: 20px;
+  height: 1.5px;
+  background: #ffffff;
+}
+
+/* ==========================================================================
+   2. Main Content Viewport
+   ========================================================================== */
+.main-wrapper {
+  margin-left: var(--sidebar-w);
+  min-height: 100vh;
+  padding: 52px 48px 100px 48px;
+  background-color: var(--bg-color);
+  border: none !important;
+}
+
+/* 2-Column Un-cropped Masonry Grid (Preserves exact native aspect ratio) */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  align-items: start;
+  width: 100%;
+}
+
+.masonry-column {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  min-height: 50px;
+}
+
+.asset {
+  position: relative;
+  background-color: #000000;
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+  height: auto; /* Natural height matching photo's native aspect ratio */
+  border: none !important;
+}
+
+.asset img {
+  width: 100%;
+  height: auto; /* Completely uncropped, no forced square */
+  display: block;
+  object-fit: contain; /* Shows 100% of the image without zoom or cropping */
+  transition: opacity 0.25s ease;
+}
+
+.asset .overlay {
+  position: absolute;
+  inset: 0;
+  background: #000000;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
+}
+
+.asset:hover .overlay {
+  opacity: 0.5;
+}
+
+.asset:active .overlay {
+  opacity: 0.7;
+}
+
+/* Interactive Drag & Drop and Quick Action Controls */
+.asset {
+  position: relative;
+  background-color: #000000;
+  cursor: pointer;
+  overflow: visible; /* Allows drop indicator line to show cleanly */
+  width: 100%;
+  height: auto;
+  border: none !important;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+body.edit-mode .asset {
+  cursor: grab;
+}
+
+body.edit-mode .asset:active {
+  cursor: grabbing;
+}
+
+.asset.is-dragging {
+  opacity: 0.35;
+  transform: scale(0.98);
+}
+
+/* Drop target indicator lines showing exactly where the photo will land */
+.asset.drop-target-top::before {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  z-index: 50;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+}
+
+.asset.drop-target-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  z-index: 50;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+}
+
+.asset-actions {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.asset:hover .asset-actions {
+  display: flex;
+}
+
+.asset-action-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: transparent;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.asset-action-btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+body.edit-mode .asset {
+  outline: 2px dashed #888;
+}
+
+.asset-action-btn.delete:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* About Photo Dragging */
+.about-photo-card {
+  position: relative;
+  background: transparent;
+  overflow: visible;
+  cursor: grab;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.about-photo-card:active {
+  cursor: grabbing;
+}
+
+.about-photo-card.is-dragging {
+  opacity: 0.35;
+}
+
+.about-photo-card:hover .remove-about-photo-btn {
+  display: flex;
+}
+
+.empty-gallery-notice {
+  grid-column: 1 / -1;
+  padding: 120px 30px;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  text-align: center;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.empty-gallery-notice:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.empty-gallery-notice h3 {
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  color: var(--white-color);
+}
+
+.empty-gallery-notice p {
+  font-family: var(--font-family);
+  color: #777777;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.upload-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-family: var(--font-family);
+  font-size: 12.5px;
+  color: #ffffff;
+  background: #0a0a0a;
+}
+
+.upload-pill-btn:hover {
+  background: #1c1c1c;
+  border-color: #ffffff;
+}
+
+/* ==========================================================================
+   3. Franklin Yeep Exact About / Contact Page Structure
+   ========================================================================== */
+.about-page-container {
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Section 1: Photos & Biography */
+.about-bio-row {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 50px;
+  align-items: start;
+  margin-bottom: 84px;
+}
+
+/* 2-3 Picture Gallery in About section */
+.about-photos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-photo-card {
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+}
+
+.about-photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* Preserves exact aspect ratio, zero zoom, zero crop */
+  transition: opacity 0.3s ease;
+}
+
+.about-photo-card:hover img {
+  opacity: 0.92;
+}
+
+.remove-about-photo-btn {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ef4444;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+}
+
+body.edit-mode .remove-about-photo-btn {
+  display: flex;
+}
+
+.add-about-photo-zone {
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  padding: 30px 16px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.015);
+  font-size: 12px;
+  color: #888888;
+  transition: all 0.2s;
+}
+
+.add-about-photo-zone:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Bio Text: 14px, Normal, line-height 1.7, #ffffff */
+.about-text-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bio-paragraph {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--white-color);
+  letter-spacing: normal;
+  outline: none;
+}
+
+.bio-paragraph:focus {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px;
+}
+
+/* Section 2: Contact Module (Franklin Yeep Style) */
+.about-contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 50px;
+  margin-bottom: 84px;
+  padding-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-left-col h2 {
+  font-family: var(--font-family);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--white-color);
+  margin-bottom: 24px;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.contact-info-list a {
+  color: var(--white-color);
+  transition: color 0.2s;
+}
+
+.contact-info-list a:hover {
+  color: var(--active-dim);
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--white-color);
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--white-color);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0;
+  padding: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ffffff;
+}
+
+.form-submit-btn {
+  align-self: flex-start;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--white-color);
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+  margin-top: 6px;
+}
+
+.form-submit-btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Section 3: Awards, Press & Exhibitions (Franklin Yeep Style) */
+.about-awards-row {
+  padding-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 820px;
+}
+
+.awards-block h3 {
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white-color);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.awards-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.awards-list li {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 700; /* Bold <b> styling like Franklin Yeep */
+  line-height: 1.7;
+  color: var(--white-color);
+  outline: none;
+}
+
+.awards-list li:focus {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px;
+}
+
+/* ==========================================================================
+   4. Franklin Yeep Passe-Partout White Matted Lightbox
+   ========================================================================== */
+.lightbox-wrapper {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.96);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+
+.lightbox-wrapper.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#gallery_window {
+  background: #ffffff;
+  padding: 54px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: min(92vw, 1100px);
+  max-height: 92vh;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.95);
+  animation: matScale 0.2s ease-out;
+}
+
+@keyframes matScale {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+#window_inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: calc(92vh - 108px);
+}
+
+#window_inner img {
+  max-width: 100%;
+  max-height: calc(92vh - 108px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+#close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 300;
+  color: #000000;
+  cursor: pointer;
+  line-height: 1;
+}
+
+#close:hover {
+  opacity: 0.5;
+}
+
+.lightbox-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 1010;
+  transition: opacity 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.lightbox-arrow:hover {
+  opacity: 0.5;
+}
+
+.lightbox-arrow.prev { left: 24px; }
+.lightbox-arrow.next { right: 24px; }
+
+/* Global Drag & Drop Overlay */
+.global-drag-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.global-drag-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drag-box {
+  width: 90%;
+  max-width: 440px;
+  padding: 50px 30px;
+  border: 1.5px dashed #ffffff;
+  text-align: center;
+  background: #000000;
+}
+
+.drag-box h2 {
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.drag-box p {
+  color: #888888;
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   5. Floating Admin Dock (Bottom Right)
+   ========================================================================== */
+.admin-dock {
+  position: fixed;
+  bottom: 20px;
+  right: 24px;
+  z-index: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mode-toggle-pill {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-toggle-pill:hover {
+  background: #252525;
+}
+
+body.edit-mode .mode-toggle-pill {
+  background: #ffffff;
+  color: #000000;
+}
+
+.editor-toolbar {
+  display: none;
+  background: rgba(20, 20, 20, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 4px 8px;
+  align-items: center;
+  gap: 6px;
+}
+
+body.edit-mode .editor-toolbar {
+  display: flex;
+}
+
+.tool-btn {
+  font-family: var(--font-family);
+  font-size: 11px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.tool-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Modal */
+.custom-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.custom-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-dialog {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 90%;
+  max-width: 380px;
+  padding: 24px;
+}
+
+.modal-dialog h3 {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.modal-dialog input {
+  width: 100%;
+  padding: 8px 12px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 13.5px;
+  margin: 12px 0 16px;
+  outline: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #000;
+  font-family: var(--font-family);
+  font-weight: 700;
+  padding: 6px 14px;
+  font-size: 11.5px;
+}
+
+.btn-secondary {
+  background: #222;
+  color: #fff;
+  font-family: var(--font-family);
+  padding: 6px 14px;
+  font-size: 11.5px;
+}
+
+/* Toast */
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  left: 36px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.toast {
+  background: #161616;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  padding: 7px 12px;
+  font-size: 11.5px;
+  font-family: var(--font-family);
+  animation: fadeIn 0.2s, fadeOut 0.2s 2.4s forwards;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+/* ==========================================================================
+   6. Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 900px) {
+  .about-bio-row,
+  .about-contact-row {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 820px) {
+  .mobile-header {
+    display: flex;
+  }
+  .nav-wrapper {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    top: 54px;
+    height: calc(100vh - 54px);
+    width: 250px;
+    padding: 36px 24px;
+  }
+  .nav-wrapper.open {
+    transform: translateX(0);
+  }
+  .main-wrapper {
+    margin-left: 0;
+    padding: 74px 20px 80px;
+  }
+  .masonry-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .masonry-column {
+    gap: 24px;
+  }
+  #gallery_window {
+    padding: 24px;
+  }
+}

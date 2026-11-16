@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DHRUV VASAVA — HUMAN PHOTOGRAPHER</title>
+  <meta name="description" content="Dhruv Vasava portfolio. Human photographer capturing the moment.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <a href="#best" class="mobile-brand">DHRUV VASAVA</a>
+    <button class="mobile-toggle-btn" id="mobileToggle" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Left-Aligned Fixed Sidebar (250px fixed, top 52px, left 36px) -->
+  <aside class="nav-wrapper" id="navWrapper">
+    <!-- Brand Title (2 lines, ALL CAPS) -->
+    <div class="logo-block">
+      <a href="#best" class="brand-text">DHRUV VASAVA</a>
+      <span class="brand-text">HUMAN PHOTOGRAPHER</span>
+    </div>
+
+    <!-- Category / Portfolio Sub-label (2 lines, ALL CAPS) -->
+    <div class="subtitle-block">
+      <span>ON THE MOMENT</span>
+      <span>PICTURES</span>
+    </div>
+
+    <!-- Navigation Page Links (single vertical column, 21px gap) -->
+    <ul class="nav-menu" id="navMenu">
+      <!-- Injected dynamically by app.js:
+           Best, Wedding, Newborn, Family, Kids, People, Places, Things, About / Contact -->
+    </ul>
+
+    <!-- Footer: 16x16px thin-stroke outline Instagram icon + 2-line copyright -->
+    <div class="nav-footer">
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="social-instagram" title="Instagram">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+      <div class="copyright-block">
+        <span>&copy; COPYRIGHT</span>
+        <span>ALL RIGHTS RESERVED</span>
+      </div>
+    </div>
+
+    <!-- "+ Add Page" in Edit Mode -->
+    <button class="add-page-nav-btn" id="btnSideAddPage">
+      <span>+</span> Add Page
+    </button>
+  </aside>
+
+  <!-- Main Viewport: Clean 2-column square image grid with 36px gaps -->
+  <main class="main-wrapper">
+    <section id="galleryContainer">
+      <div class="masonry-grid" id="masonryGrid">
+        <!-- 2-column square grid injected by app.js -->
+      </div>
+    </section>
+
+    <section id="aboutContainer" style="display: none;">
+      <!-- Injected by app.js -->
+    </section>
+  </main>
+
+  <!-- Global Drag-and-Drop Overlay -->
+  <div class="global-drag-overlay" id="globalDragOverlay">
+    <div class="drag-box">
+      <h2>Drop Images Anywhere</h2>
+      <p>Photos will be added directly into this gallery.</p>
+    </div>
+  </div>
+
+  <!-- Franklin Yeep Passe-Partout White Matted Lightbox Frame -->
+  <div class="lightbox-wrapper" id="lightboxModal" role="dialog" aria-modal="true">
+    <div class="lightbox-arrow prev" id="lightboxPrev" title="Previous">&#10094;</div>
+    <div class="lightbox-arrow next" id="lightboxNext" title="Next">&#10095;</div>
+
+    <div id="gallery_window">
+      <div id="close" title="Close">&times;</div>
+      <div id="window_inner">
+        <img id="lightboxImg" src="" alt="Fine-art photograph">
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Admin Dock (Bottom Right) -->
+  <div class="admin-dock">
+    <div class="editor-toolbar" id="editorToolbar">
+      <button class="tool-btn" id="btnUpload">+ Upload Photos</button>
+      <button class="tool-btn" id="btnNewPage">+ New Page</button>
+      <button class="tool-btn" id="btnExport">Export Backup</button>
+      <button class="tool-btn" id="btnReset" style="color: #ef4444;">Reset</button>
+    </div>
+
+    <button class="mode-toggle-pill" id="modeToggleBtn" title="Toggle Editor Mode (Shift + E)">
+      <span id="modeBtnText">Editor OFF</span>
+    </button>
+  </div>
+
+  <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
+
+  <!-- Modal: Create New Page -->
+  <div class="custom-modal" id="newPageModal">
+    <div class="modal-dialog">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <h3 style="margin-bottom: 0;">Create New Gallery Page</h3>
+        <button id="newPageClose" style="color: #888; font-size: 20px; line-height: 1; padding: 2px 6px;" title="Close">&times;</button>
+      </div>
+      <p style="font-size: 13px; color: #888;">Enter a title for your new portfolio page:</p>
+      <input type="text" id="newPageInput" placeholder="e.g. Editorial, Concerts, Street" maxlength="30">
+      <div class="modal-actions">
+        <button class="btn-secondary" id="newPageCancel">Cancel</button>
+        <button class="btn-primary" id="newPageSubmit">Create Page</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastBox"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
